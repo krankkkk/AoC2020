@@ -22,13 +22,16 @@ public abstract class AbstractDay implements Day {
 
     @Override
     public long part1() {
-        return part1(getActualInput());
+        try (Stream<String> toClose = getActualInput()) {
+            return part1(toClose);
+        }
     }
-
 
     @Override
     public long part2() {
-        return part2(getActualInput());
+        try (Stream<String> toClose = getActualInput()) {
+            return part2(toClose);
+        }
     }
 
     private Stream<String> getInput(final int part) {
