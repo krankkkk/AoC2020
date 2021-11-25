@@ -1,4 +1,6 @@
-package de.aoc.days;
+package de.aoc.days.day13;
+
+import de.aoc.days.AbstractDay;
 
 import java.util.Arrays;
 import java.util.Collection;

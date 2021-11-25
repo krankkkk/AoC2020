@@ -36,7 +36,7 @@ public abstract class AbstractDay implements Day {
 
     private Stream<String> getInput(final int part) {
         try {
-            final URI toSrc = getClass().getResource("/%s-%d.txt".formatted(getClass().getSimpleName(), part)).toURI();
+            final URI toSrc = getClass().getResource("%d.txt".formatted(part)).toURI();
             return Files.lines(Path.of(toSrc));
         } catch (IOException e) {
             throw new UncheckedIOException(e);
