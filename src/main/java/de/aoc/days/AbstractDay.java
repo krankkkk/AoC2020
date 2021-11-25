@@ -12,12 +12,12 @@ public abstract class AbstractDay implements Day {
 
     @Override
     public Stream<String> getDebugInput() {
-        return getInput(0);
+        return getInput("debug.txt");
     }
 
     @Override
     public Stream<String> getActualInput() {
-        return getInput(1);
+        return getInput("input.txt");
     }
 
     @Override
@@ -34,9 +34,9 @@ public abstract class AbstractDay implements Day {
         }
     }
 
-    private Stream<String> getInput(final int part) {
+    protected Stream<String> getInput(final String name) {
         try {
-            final URI toSrc = getClass().getResource("%d.txt".formatted(part)).toURI();
+            final URI toSrc = getClass().getResource(name).toURI();
             return Files.lines(Path.of(toSrc));
         } catch (IOException e) {
             throw new UncheckedIOException(e);
